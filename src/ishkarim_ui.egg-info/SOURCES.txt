@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/ishkarim_ui/__init__.py
+src/ishkarim_ui/extracted.py
+src/ishkarim_ui/utils.py
+src/ishkarim_ui.egg-info/PKG-INFO
+src/ishkarim_ui.egg-info/SOURCES.txt
+src/ishkarim_ui.egg-info/dependency_links.txt
+src/ishkarim_ui.egg-info/requires.txt
+src/ishkarim_ui.egg-info/top_level.txt
+src/ishkarim_ui/snippets/__init__.py
+src/ishkarim_ui/snippets/extracted.py
+tests/test_ui.py
