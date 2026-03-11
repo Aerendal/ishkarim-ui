@@ -1,103 +1,102 @@
 # ishkarim-ui
 
-> Interfejsy terminalowe i semantyczne: Textual TUI, retro dashboardy, visual knowledge graphs.
+> **Interfejsy terminalowe dla systemów AI — Textual TUI, retro dashboardy, visual knowledge graphs**
 
-## Instalacja
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)]()
+[![License](https://img.shields.io/badge/license-MIT-green)]()
+[![CPU-only](https://img.shields.io/badge/CPU-only-orange)]()
+
+## Problem, który rozwiązujemy
+
+- TUI dashboard dla monitorowania stanu agentów
+- Retro-styled UI dla narzędzi CLI — czytelne, bez zależności webowych
+- Wizualizacja grafu wiedzy w terminalu (ASCII/Textual)
+
+Pełna lista → [docs/PROBLEMS.md](docs/PROBLEMS.md)
+
+## Szybki start
 
 ```bash
+# Instalacja
 pip install -e projects/ishkarim-ui
+
+# Demo (10 sekund)
+python projects/ishkarim-ui/demo.py
 ```
 
-Lub lokalnie z tego repozytorium:
-
-```bash
-cd projects/ishkarim-ui
-pip install -e ".[dev]"
-```
-
-## Użycie
+## Użycie w kodzie
 
 ```python
 import ishkarim_ui as m
 
-# Lista dostępnych modułów
-print(m.MODULES)
-
-# Wczytaj indeks wiedzy
+# Wszystkie 19 katalogi wiedzy obszaru 'ui'
 docs = m.load_knowledge_index()
+print(f"{len(docs)} katalogów | obszar: {m.__area__}")
+
+# Narzędzia pomocnicze
+from ishkarim_ui.utils import read_work_md, extract_tags, extract_python_blocks
 ```
 
-## Obszar tematyczny
+## Dla kogo
 
-Ten projekt agreguje wiedzę z **19 katalogów** obszaru `ui`:
+- Inspektor wyników wyszukiwania RAG dla dewelopera bez GUI
+- Dashboard monitorowania agentów w środowisku serverowym (SSH/bastion)
+- Prototypowanie interfejsu użytkownika przed inwestycją w web frontend
 
-- `Artlist AI voice generator`
-- `Ciekawe rozwiązania projektowe`
-- `HarfBuzz 12.3 i przyspieszenie renderowania tekstu`
-- `Interfejsy i wizualizacja przepływów wiedzy`
-- `Kolory przyjazne daltonistom dla stanów danych`
-- `New experimental UI  and retro finds`
-- `Nowe demo - retro UI i terminale`
-- `Nowe eksperymentalne UI i retro‑wizualizacje`
-- … i 11 więcej (pełna lista w [MODULES.md](MODULES.md))
+## Dokumentacja
 
-## Przykładowe źródła
+| Plik | Zawartość |
+|------|-----------|
+| [docs/PROBLEMS.md](docs/PROBLEMS.md) | Co rozwiązuje / czego nie / znane problemy |
+| [docs/api.md](docs/api.md) | Dokumentacja API |
+| [docs/overview.md](docs/overview.md) | Przegląd obszaru |
+| [docs/sources.md](docs/sources.md) | Źródłowe katalogi wiedzy |
+| [MODULES.md](MODULES.md) | Pełny indeks 19 katalogów |
 
-### Artlist AI voice generator
+## Testy i benchmarki
 
-# WORK: Artlist AI voice generator
-## 0-Metadane
-- Katalog: Artlist AI voice generator
-- Pliki: 13 (bez placeholderów)
-- Tagi: TTS, voice-cloning, audio-pipeline, offline-AI, game-dev, NPC-dialogi, Python
+```bash
+# Testy jednostkowe
+pytest tests/test_ui.py -v
 
-### Ciekawe rozwiązania projektowe
+# Testy domenowe (z prawdziwymi danymi)
+pytest tests/test_ui_domain.py -v
 
-# Ciekawe rozwiązania projektowe
-## 0-Metadane
-- Pliki: 10 (pliki .canvas z treścią > 120 B)
-- Tagi: UI, animacje, React, CSS, design, canvas, front-end
-- Status: done
-
-### HarfBuzz 12.3 i przyspieszenie renderowania tekstu
-
-# HarfBuzz 12.3 i przyspieszenie renderowania tekstu
-## 0-Metadane
-- Pliki: 9
-- Tagi: `harfbuzz` `text-shaping` `benchmark` `opentype` `pango` `cairo` `regression-testing` `ci`
-- Status: done
-
+# Benchmarki wydajnościowe
+python benchmarks/bench_ui.py --quick
+```
 
 ## Struktura projektu
 
 ```
 ishkarim-ui/
-├── pyproject.toml        # installable package
+├── demo.py                    ← uruchom mnie
+├── pyproject.toml
 ├── README.md
-├── MODULES.md            # pełny indeks 19 katalogów-źródeł
-├── src/
-│   └── ishkarim_ui/
-│       ├── __init__.py   # publiczne API
-│       ├── utils.py      # wspólne narzędzia
-│       └── *.py          # kod wyekstrahowany z WORK.md
+├── MODULES.md                 ← 19 katalogów-źródeł
+├── docs/
+│   ├── PROBLEMS.md            ← co rozwiązuje / czego nie
+│   ├── api.md                 ← dokumentacja API
+│   ├── overview.md
+│   └── sources.md
+├── src/ishkarim_ui/
+│   ├── __init__.py            ← MODULES list + load_knowledge_index()
+│   ├── utils.py               ← read_work_md, extract_tags, extract_python_blocks
+│   └── snippets/              ← kod z WORK.md (referencyjny)
 ├── tests/
-│   ├── __init__.py
-│   └── test_ui.py
-└── docs/
-    ├── overview.md
-    └── sources.md
+│   ├── test_ui.py         ← testy jednostkowe
+│   └── test_ui_domain.py  ← testy domenowe
+└── benchmarks/
+    └── bench_ui.py        ← benchmarki wydajnościowe
 ```
 
-## Testy
+## Ograniczenia
 
-```bash
-pytest projects/ishkarim-ui/tests/ -v
-```
-
-## Źródło danych
-
-Katalogi źródłowe znajdują się w katalogu głównym repozytorium Ishkarim.
-Każdy katalog zawiera `WORK.md` (notatki badawcze) i `TAGS.md` (metadane).
+> ⚠️ To projekt **referencyjny** — wzorce i wiedza, nie gotowa biblioteka produkcyjna.
+> Przed wdrożeniem produkcyjnym przeczytaj [docs/PROBLEMS.md](docs/PROBLEMS.md).
 
 ---
-*Wygenerowano automatycznie przez `scripts/build_projects.py`*
+
+*Część ekosystemu [Ishkarim](../../README.md) — 19 katalogów wiedzy obszaru `ui`*
+*Wygenerowano: 2026-03-11 | `scripts/build_projects.py` + `scripts/enrich_projects.py`*
