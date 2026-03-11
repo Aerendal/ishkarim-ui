@@ -5,7 +5,7 @@
 > Łącznie unikalnych URL: **319**
 
 
-## 📄 Artykuły naukowe (15)
+## Artykuły naukowe (15)
 
 - <https://arxiv.org/abs/2511.08195>  
   _źródło: `New experimental UI  and retro finds`, `Nowe demo - retro UI i terminale`, `Nowości: retro‑UI i terminale`_
@@ -38,7 +38,7 @@
 - <https://www.arxiv.org/abs/2512.08951>  
   _źródło: `New experimental UI  and retro finds`_
 
-## 🐙 Repozytoria GitHub (55)
+## Repozytoria GitHub (55)
 
 - <https://github.com/Imetomi/retro-futuristic-ui-design>  
   _źródło: `New experimental UI  and retro finds`, `Nowe eksperymentalne UI i retro‑wizualizacje`, `Nowe odkrycia: retro UI i terminale` +1_
@@ -151,14 +151,14 @@
 - <https://github.com/zai-org/UI2Code_N>  
   _źródło: `New experimental UI  and retro finds`_
 
-## 🤖 ML / modele (2)
+## ML / modele (2)
 
 - <https://huggingface.co/coqui/XTTS-v2>  
   _źródło: `Artlist AI voice generator`_
 - <https://huggingface.co/zai-org/UI2Code_N>  
   _źródło: `New experimental UI  and retro finds`_
 
-## 📚 Dokumentacja (17)
+## Dokumentacja (17)
 
 - <https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40media/prefers-reduced-motion>  
   _źródło: `New experimental UI  and retro finds`, `Nowe eksperymentalne UI i retro‑wizualizacje`_
@@ -195,7 +195,7 @@
 - <https://xtermjs.org/docs/guides/security/>  
   _źródło: `Nowe eksperymentalne UI i retro‑wizualizacje`_
 
-## 🔗 Inne zasoby (230)
+## Inne zasoby (230)
 
 - <https://json-schema.org/draft/2020-12/schema>  
   _źródło: `Interfejsy i wizualizacja przepływów wiedzy`, `Kolory przyjazne daltonistom dla stanów danych`, `Retro TUI Textual, FTXUI, termdash`_
@@ -358,7 +358,7 @@
 - <https://forums.blurbusters.com/viewtopic.php?t=15068>  
   _źródło: `New experimental UI  and retro finds`_
 
-## 📁 Katalogi źródłowe
+## Katalogi źródłowe
 
 Obszar `ui` zawiera **19** katalogów:
 
